@@ -1,0 +1,140 @@
+/*
+ * DP_USB.h
+ *
+ *  Created on: May 23, 2020
+ *      Author: Garmoosh
+ */
+
+
+
+#ifndef DP_INC_DP_USB_H_
+#define DP_INC_DP_USB_H_
+
+#include <GHeader.h>
+#include <vector>
+using namespace std ;
+
+
+// PDWN startup delay is 1 us , at most 10 cycles at 72 MHZ
+#define USB_T_STARTUP 10
+
+#define USB_PMASIZE 512UL
+#define EP_UNALLOC -1
+#define EP_ALLOC 0
+#define USB_ENABLE_INT(INT_MASK) ( USB->CNTR |= ( INT_MASK << USB_CNTR_ESOF_Pos ))
+#define USB_DISABLE_INT(INT_MASK)( USB->CNTR &= ~ ( INT_MASK << USB_CNTR_ESOF_Pos))
+#define EP_TXSTAT_MSK USB_EP0R_STAT_TX_Msk
+#define EP_RXSTAT_MSK USB_EP0R_STAT_RX_Msk
+#define EP_WR_MSK (uint16_t)0B1000000010000000
+#define INTF_BIT_MASK (~(( USB_ISTR_ESOF_Msk ) - 1UL ))
+#define EP_NUM 8UL
+#define PMA_NUM_LOCATIONS 256UL
+#define USB_BTABLE_SIZE 32UL
+
+
+enum USB_int_E {
+
+	USB_ESOF_INT               = USB_ISTR_ESOF_Msk ,
+	USB_SOF_INT                = USB_ISTR_SOF_Msk ,
+	USB_RESET_INT              = USB_ISTR_RESET_Msk ,
+	USB_SUSPEND_INT            = USB_ISTR_SUSP_Msk ,
+	USB_WAKEUP_INT             = USB_ISTR_WKUP_Msk ,
+	USB_ERROR_INT              = USB_ISTR_ERR_Msk ,
+	USB_MEM_OVR_UDR_INT        = USB_ISTR_PMAOVR_Msk ,
+	USB_TRANSFER_COMPLETE_INT  = USB_ISTR_CTR_Msk ,
+
+};
+
+
+enum EP_dir_E {
+
+	EP_DIR_OUT = 1UL ,
+	EP_DIR_IN  = 0UL ,
+	EP_DIR_BID = 2UL ,
+};
+
+
+enum EP_type_E {
+
+	EP_TYPE_BULK    = 0B00 ,
+	EP_TYPE_CONTROL = 0B01 ,
+	EP_TYPE_ISO     = 0B10 ,
+	EP_TYPE_INT     = 0B11 ,
+};
+
+enum EP_bufftype_E {
+
+	EP_DOUBLE_BUFF  = 0UL ,
+	EP_SINGLE_BUFF  = 1UL ,
+
+};
+
+enum EP_stat_E {
+
+	EP_DISABLED = (uint16_t)0B00 ,
+	EP_STALL    = (uint16_t)0B01 ,
+	EP_NAK      = (uint16_t)0B10 ,
+	EP_VALID    = (uint16_t)0B11 ,
+};
+
+
+
+#define HW_LSB(ARG) (ARG&0X00FF)
+#define HW_MSB(ARG) ((ARG&0XFF00 >> 8UL))
+class PMA{
+
+private :
+
+ const uint32_t  sizew16_pma      = PMA_NUM_LOCATIONS ;
+ const uint16_t* pma_last_addr = uint16_t(USB_PMAADR + PMA_NUM_LOCATIONS - 1 ) ;
+ uint16_t* ptr_unalloc          ;
+ uint32_t sizew16_free				;
+ uint32_t sizew16_used				;
+ uint8_t  eps_allocated             ;
+ int32_t  EPs_alloc[EP_NUM]     ;
+
+public:
+
+ PMA( void );
+ inline void write_hw( uint16_t val , uint16_t* ptr );
+ inline uint16_t read_hw( uint16_t* ptr );
+ int32_t PMA_allocate( EP_Config_S& ep );
+
+};
+
+
+struct EP_Config_S {
+
+ EP_type_E EP_Type      ;
+ EP_dir_E  EP_Dir       ;
+ int32_t  EP_Num       ;
+ uint8_t EP_Addr ;
+ EP_bufftype_E EP_TBT   ;
+ EP_bufftype_E EP_RBT   ;
+ uint8_t* EP_RX0_Ptr   ;
+ uint8_t* EP_TX0_Ptr   ;
+ uint8_t* EP_RX1_Ptr   ;
+ uint8_t* EP_TX1_Ptr   ;
+ uint32_t  EP_TX0_BSize ;
+ uint32_t  EP_RX0_BSize ;
+ uint32_t  EP_TX1_BSize ;
+ uint32_t  EP_RX1_BSize ;
+
+private:
+
+ int32_t alloc ;
+
+
+public :
+
+ EP_Config_S ( void ) ;
+ int32_t allocate ( void ) ;
+
+
+};
+
+
+
+
+
+#endif /* DP_INC_DP_USB_H_ */

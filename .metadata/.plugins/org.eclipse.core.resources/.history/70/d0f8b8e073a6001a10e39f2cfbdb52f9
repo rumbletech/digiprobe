@@ -1,0 +1,484 @@
+/*
+ * DP_USB.cpp
+ *
+ *  Created on: May 23, 2020
+ *      Author: Garmoosh
+ */
+
+
+#include <DP_USB.h>
+
+
+PMA pma ;
+
+
+
+/*********
+ ***********************
+ *******************************
+ ******************************* PMA Functions **************************/
+
+
+PMA::PMA( void )
+:ptr_unalloc((64UL)),
+sizew16_free(PMA_NUM_LOCATIONS-USB_BTABLE_SIZE),
+sizew16_used(USB_BTABLE_SIZE),
+eps_allocated(0),
+EPs_alloc{0,0,0,0,0,0,0,0}
+{
+}
+
+
+
+uint16_t PMA::read_hw(  uint16_t  ptr )
+{	if (ptr%2){--ptr; }
+	return *((uint16_t*)(((uint32_t)ptr)*2UL + USB_PMAADDR)) ;
+}
+
+
+uint16_t PMA::read_b(  uint16_t  ptr )
+{
+	if (ptr%2)
+	{
+		--ptr;
+		return HW_MSB(*((uint16_t*)(((uint32_t)ptr)*2UL + USB_PMAADDR))) ;
+	}
+	return HW_LSB(*((uint16_t*)(((uint32_t)ptr)*2UL + USB_PMAADDR))) ;
+}
+
+
+
+
+void PMA::write_hw( uint16_t val , uint16_t ptr )
+{
+	if ( ptr%2 ){
+		ptr--;
+	}
+	*((uint16_t*)(((uint32_t)ptr)*2UL + USB_PMAADDR)) = val ;
+}
+
+
+
+
+
+int32_t PMA::PMA_allocate( EP_Config_S& ep )
+{
+
+
+	//Don't allocate if it already exists
+	for ( uint32_t i = 0 ; i < this->eps_allocated ; i++ )
+	{
+		if ( this->EPs_alloc[i] == ep.EP_Num || this->eps_allocated >= EP_NUM )
+		{
+			return -1 ;
+		}
+	}
+
+	//allocate , one half word for unused buffers as padding
+	 uint32_t REQsz_rx0 = ( ep.EP_RX0_BSize ) ? ep.EP_RX0_BSize : 2UL ;
+	 uint32_t REQsz_tx0 = ( ep.EP_TX0_BSize ) ? ep.EP_TX0_BSize : 2UL ;
+	 uint32_t bl_size ;
+	 uint32_t bl_num  ;
+
+	 if ( REQsz_rx0 > 62UL )
+	 {
+		 bl_size = 1UL ;
+		 bl_num  = REQsz_rx0/32UL ;
+	 }
+	 else{
+		 bl_size = 0 ;
+		 bl_num  = REQsz_rx0/2UL ;
+
+	 }
+
+
+
+	 uint16_t rx_w = (( bl_size << USB_COUNT0_RX_BLSIZE_Pos )|( bl_num << USB_COUNT0_RX_NUM_BLOCK_Pos ));
+	 uint32_t REQsz_mem = REQsz_rx0 + REQsz_tx0 ;
+	 if ( ( this->sizew16_free * 2 ) < REQsz_mem )
+	 {
+		 return -1 ;
+	 }
+	 //Allocate
+	ep.EP_RX0_Ptr = this->ptr_unalloc ;
+	this->ptr_unalloc  += ( REQsz_rx0/2) ;
+	this->sizew16_free -= ( REQsz_rx0/2) ;
+	this->sizew16_used += ( REQsz_rx0/2) ;
+
+	ep.EP_TX0_Ptr = this->ptr_unalloc ;
+	this->ptr_unalloc  += ( REQsz_tx0/2) ;
+	this->sizew16_free -= ( REQsz_tx0/2) ;
+	this->sizew16_used += ( REQsz_tx0/2) ;
+
+
+	// write values for the pointers
+	// if a buffer is one direction and not double buffered
+	// it is allocated a 2 byte padding ,in place of this buffer
+	this->write_hw( ep.EP_TX0_Ptr   , ( ep.EP_Num * 8UL) );
+	this->write_hw( ep.EP_RX0_Ptr   , ( ep.EP_Num * 8UL + 4UL ) );
+	this->write_hw( rx_w , ( ep.EP_Num * 8UL + 6UL ) );
+
+	this->EPs_alloc[(this->eps_allocated)++] = ep.EP_Num ;
+
+	// done
+	return 0 ;
+
+}
+
+bool PMA::is_alloc( int32_t ep_num )
+{
+
+	for ( int32_t i = 0 ; i < this->eps_allocated ; i++ )
+	{
+		if ( this->EPs_alloc[i] == ep_num )
+		{
+				return true ;
+		}
+	}
+	return false ;
+}
+
+
+
+/*********
+ ***********************
+ *******************************
+ ******************************* USB Functions **************************/
+
+
+
+inline void  USBINT_Enable( uint32_t mask ){
+
+	USB->CNTR |= ( mask & INTF_BIT_MASK ) ;
+
+}
+
+inline void  USBINT_Disable( uint32_t mask ){
+	USB->CNTR &= ~( mask & INTF_BIT_MASK );
+}
+
+inline void USBINT_Clear( USB_int_E usb_int )
+{
+	USB->ISTR = ~( usb_int );
+}
+
+inline uint32_t USBINT_GetINTW( void )
+{
+	return USB->ISTR ;
+}
+
+inline uint32_t USBINT_GetEPID ( uint32_t w )
+{
+	return ( w & USB_ISTR_EP_ID_Msk) ;
+}
+
+inline uint32_t USBINT_GetEPDIR( uint32_t w )
+{
+	return (( w & USB_ISTR_DIR_Msk) >> USB_ISTR_DIR_Pos );
+}
+
+inline void USBINT_Enable_All ( void )
+{
+	USBINT_Enable( USB_ESOF_INT | USB_SOF_INT |
+				   USB_RESET_INT| USB_SUSPEND_INT|
+				   USB_WAKEUP_INT|USB_ERROR_INT|
+				   USB_MEM_OVR_UDR_INT|USB_TRANSFER_COMPLETE_INT );
+
+}
+
+inline void USBINT_Disable_All ( void )
+{
+	USBINT_Disable( USB_ESOF_INT | USB_SOF_INT |
+				   USB_RESET_INT| USB_SUSPEND_INT|
+				   USB_WAKEUP_INT|USB_ERROR_INT|
+				   USB_MEM_OVR_UDR_INT|USB_TRANSFER_COMPLETE_INT );
+}
+
+int32_t USB_Init( uint8_t Int_Mask  )
+{
+
+	if ( USB->CNTR & ( 1 << USB_CNTR_PDWN_Pos ) )
+	{
+		//Clear PDWN
+		USB->CNTR &= ~ ( 1 << USB_CNTR_PDWN_Pos ) ;
+		// tStartup Delay
+		for ( uint32_t i = 0 ; i < USB_T_STARTUP ; i++ ) ;
+	}
+
+	if ( USB->CNTR & ( 1 << USB_CNTR_FRES_Pos ))
+	{
+		//Clear FRES + Clear INT Masks
+		USB->CNTR = 0  ;
+	}
+	else{
+		//Reset  , then deassert RESET + Clear INT Masks
+		USB->CNTR = ( 1 << USB_CNTR_FRES_Pos )  ;
+		USB->CNTR = 0UL  ;
+	}
+
+	//CLEAR Pending Interrupts
+
+	USB->ISTR = 0 ;
+
+	//Set BTABLE BASE AT 0 , AND ENABLE INT MASK
+	USB->BTABLE = 0UL ;
+	USB->CNTR |= ( static_cast<uint32_t>(Int_Mask) << USB_CNTR_ESOFM_Pos ) ;
+
+	return 1 ;
+
+}
+
+/*********
+ ***********************
+ *******************************
+ ******************************* EP Class Functions **************************/
+
+
+void EP_Config_S::setTXStat ( volatile uint16_t* ep_reg , EP_stat_E ep_stat )
+{
+	uint16_t ep_val = EP_WR_MSK ;
+	uint16_t toggle = ( *(ep_reg) ^ ( ep_stat<< USB_EP0R_STAT_TX_Pos )) & USB_EP0R_STAT_TX_Msk ;
+
+	if ( toggle & ( 1 << USB_EP0R_STAT_TX_Pos ) ){
+		ep_val |= ( 1 << USB_EP0R_STAT_TX_Pos );
+	}
+	if ( toggle & ( 1 << (USB_EP0R_STAT_TX_Pos+1) ))
+	{
+		ep_val |= ( 1 << (USB_EP0R_STAT_TX_Pos+1) );
+	}
+
+	*(ep_reg) |= ( ep_val );
+
+}
+
+void EP_Config_S::setRXStat( volatile uint16_t* ep_reg , EP_stat_E ep_stat )
+{
+
+	uint16_t ep_val = EP_WR_MSK ;
+	uint16_t toggle = ( *(ep_reg) ^ ( ep_stat<< USB_EP0R_STAT_RX_Pos )) & USB_EP0R_STAT_RX_Msk ;
+
+	if ( toggle & ( 1 << USB_EP0R_STAT_RX_Pos ) ){
+		ep_val |= ( 1 << USB_EP0R_STAT_RX_Pos );
+	}
+	if ( toggle & ( 1 << (USB_EP0R_STAT_RX_Pos+1) ))
+	{
+		ep_val |= ( 1 << (USB_EP0R_STAT_RX_Pos+1) );
+	}
+
+	*(ep_reg) |= ( ep_val );
+
+
+}
+
+
+void EP_Config_S::setRXDTOG ( volatile uint16_t* ep_reg , bool val )
+{
+	uint16_t ep_val = EP_WR_MSK ;
+	uint16_t toggle = ( *(ep_reg) ^ ( val << USB_EP0R_DTOG_RX_Pos )) & USB_EP0R_DTOG_RX_Msk ;
+
+	if ( toggle & ( 1 << USB_EP0R_DTOG_RX_Pos ))
+	{
+		ep_val |= ( 1 << USB_EP0R_DTOG_RX_Pos );
+	}
+
+	*(ep_reg)|= ep_val ;
+}
+
+
+void EP_Config_S::setTXDTOG ( volatile uint16_t* ep_reg , bool val )
+{
+
+	uint16_t ep_val = EP_WR_MSK ;
+	uint16_t toggle = ( *(ep_reg) ^ ( val << USB_EP0R_DTOG_TX_Pos )) & USB_EP0R_DTOG_TX_Msk ;
+
+	if ( toggle & ( 1 << USB_EP0R_DTOG_TX_Pos ))
+	{
+		ep_val |= ( 1 << USB_EP0R_DTOG_TX_Pos );
+	}
+
+	*(ep_reg)|= ep_val ;
+
+}
+
+bool EP_Config_S::getRXDTOG( void )
+{
+	return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_DTOG_RX_Msk ) >> USB_EP0R_DTOG_RX_Pos );
+}
+
+bool EP_Config_S::getTXDTOG( void )
+{
+	return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_DTOG_TX_Msk ) >> USB_EP0R_DTOG_TX_Pos );
+}
+
+
+EP_stat_E EP_Config_S::getRXStat( void )
+{
+	return static_cast<EP_stat_E>(((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos ));
+}
+
+EP_stat_E EP_Config_S::getTXStat( void )
+{
+	return static_cast<EP_stat_E>(((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos ));
+
+}
+
+
+
+
+
+
+
+EP_Config_S::EP_Config_S ( void ){
+
+
+	this->EP_TX0_Ptr = 0;
+	this->EP_RX0_Ptr = 0;
+	this->EP_RX0_BSize = 0 ;
+	this->EP_RX1_BSize = 0 ;
+	this->EP_TX0_BSize = 0 ;
+	this->EP_TX1_BSize = 0 ;
+	this->EP_RBT = EP_bufftype_E::EP_SINGLE_BUFF ;
+	this->EP_TBT = EP_bufftype_E::EP_SINGLE_BUFF ;
+	this->EP_Type= EP_type_E::EP_TYPE_INT ;
+	this->EP_Dir = EP_dir_E::EP_DIR_BID ;
+	this->EP_Num = 0 ;
+	this->alloc  = EP_UNALLOC ;
+	this->EP_Reg = nullptr ;
+
+}
+
+
+int32_t EP_Config_S::allocate ( void )
+{
+
+	if ( (this->EP_Dir == EP_dir_E::EP_DIR_BID ) &&
+					 ( (this->EP_BT == EP_bufftype_E::EP_SINGLE_BUFF && !this->EP_RX0_BSize)||
+					   (this->EP_BT == EP_bufftype_E::EP_SINGLE_BUFF && !this->EP_TX0_BSize)||
+					   (this->EP_BT == EP_bufftype_E::EP_DOUBLE_BUFF))
+					  )
+					  {
+
+					return -1 ;
+
+				}
+				else if ( ( this->EP_Dir == EP_dir_E::EP_DIR_OUT ) &&
+						 ((this->EP_BT == EP_bufftype_E::EP_SINGLE_BUFF && !this->EP_RX0_BSize)||
+						  (this->EP_BT == EP_bufftype_E::EP_DOUBLE_BUFF && !( this->EP_RX0_BSize && this->EP_RX1_BSize))
+						  ))
+				{
+					return -1 ;
+				}
+				else if ( (this->EP_Dir == EP_dir_E::EP_DIR_IN ) &&
+						( (this->EP_BT == EP_bufftype_E::EP_SINGLE_BUFF && !this->EP_TX0_BSize)||
+						  (this->EP_BT == EP_bufftype_E::EP_DOUBLE_BUFF && !( this->EP_TX0_BSize && this->EP_TX1_BSize))
+							))
+				{
+						return -1 ;
+				}
+
+
+	if ( !pma.PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+		//allocation successful
+		volatile uint16_t * ep_reg = &(USB->EP0R);
+
+		ep_reg+= this->EP_Num ;
+
+		uint16_t ep_val = EP_WR_MSK ;
+		//EP TYPE
+		ep_val|= ( this->EP_Type << USB_EP0R_EP_TYPE_Pos ) ;
+		//EP BUFF TYPE
+		ep_val|= ( ( this->EP_Dir == EP_dir_E::EP_DIR_BID ? (1UL) : (0UL)) << USB_EP0R_EP_KIND_Pos );
+		//EP Address
+		ep_val|= ( this->EP_Addr << USB_EP0R_EA_Pos );
+		*(ep_reg) = ep_val ;
+		//Init DTOG
+
+		if ( this->EP_Type == EP_type_E::EP_TYPE_CONTROL )
+		{
+			setTXDTOG( ep_reg , false );
+			setRXDTOG( ep_reg , true );
+		}
+		else{
+			setTXDTOG(ep_reg , false );
+			setRXDTOG(ep_reg , false );
+		}
+
+		//Init STAT
+		if ( this->EP_Dir == EP_dir_E::EP_DIR_IN )
+		{
+			setRXStat( ep_reg , EP_stat_E::EP_DISABLED);
+			setTXStat( ep_reg , EP_stat_E::EP_STALL ) ;
+		}
+		else if ( this->EP_Dir == EP_dir_E::EP_DIR_OUT )
+		{
+			setRXStat( ep_reg , EP_stat_E::EP_STALL);
+			setTXStat( ep_reg , EP_stat_E::EP_DISABLED ) ;
+
+		}
+		else if ( this -> EP_Dir == EP_dir_E::EP_DIR_BID )
+		{
+			setRXStat( ep_reg , EP_stat_E::EP_STALL);
+			setTXStat( ep_reg , EP_stat_E::EP_STALL ) ;
+		}
+		else{
+
+			setRXStat( ep_reg , EP_stat_E::EP_DISABLED);
+			setTXStat( ep_reg , EP_stat_E::EP_DISABLED ) ;
+			return -1 ;
+
+
+		}
+		return 0 ;
+
+	}
+
+
+	return -1 ;
+
+}
+
+
+
+int32_t EP_Config_S::writeTXBuff ( uint8_t* d_ptr , uint16_t d_len  )
+{
+	if ( d_len %2 )
+	{
+		d_len++;
+	}
+	//check if ep is allocated and initialized
+	if ( !pma.is_alloc( this->EP_Num ) || d_len > this->EP_TX0_BSize )
+	{
+		return -1 ;
+	}
+
+	for( int32_t i = 0 ; d_len ; d_len-=2 , i+=2 )
+	{
+		uint16_t val  = *( (uint16_t)*(d_ptr) )
+		pma.write_hw( val , this->EP_TX0_Ptr + i )
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

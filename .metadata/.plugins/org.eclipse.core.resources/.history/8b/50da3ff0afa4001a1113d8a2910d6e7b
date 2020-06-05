@@ -1,0 +1,420 @@
+/*
+ * Ct_RCC.h
+ *
+ *  Created on: May 2, 2020
+ *      Author: Garmoosh
+ */
+
+
+#ifndef DP_INC_CT_RCC_H_
+#define DP_INC_CT_RCC_H_
+
+
+#include <GHeader.h>
+#include <DP_RCC.h>
+
+
+#define DEFAULT_CONFIG  0UL
+#define BLUEPILL_CONFIG 1UL
+
+
+
+
+class Ct_RCC{
+
+private :
+
+
+
+/* Kept Clock Values */
+
+
+	const uint32_t  HSI_clk = 8000000UL     ;
+	const uint32_t  LSI_clk  = 40000UL   ;
+
+	uint32_t  SYS_clk     ;
+	uint32_t  systick_clk ;
+	uint32_t  PLL_clk     ;
+	uint32_t  H_clk       ;
+	uint32_t  RTC_clk     ;
+	uint32_t  MCO_clk     ;
+	uint32_t  AHB_clk     ;
+	uint32_t  APB1_clk    ;
+	uint32_t  APB2_clk    ;
+	/*AHB PERPHS START */
+
+#if defined( RCC_AHBENR_FLITFEN_Msk )
+	uint32_t  FLITF_clk   ;
+#endif
+#if defined( RCC_AHBENR_SDIOEN_Msk )
+	uint32_t  SDIO_clk    ;
+	uint32_t  SDIO_AHB_clk;
+#endif
+	/*AHB PERPHS END */
+	/*APB2 PERPHS START */
+
+#if defined( RCC_APB2ENR_TIM1EN_Msk )
+	uint32_t  TIM1_clk    ;
+#endif
+#if defined( RCC_APB2ENR_ADC1EN_Msk )
+	uint32_t  ADC1_clk    ;
+#endif
+#if defined( RCC_APB2ENR_ADC3EN_Msk )
+	uint32_t  ADC3_clk    ;
+#endif
+
+	/*APB2 PERPHS END */
+	/*APB1 PERPHS START*/
+#if defined( RCC_APB1ENR_TIM2EN_Msk )
+	uint32_t  TIM2_clk    ;
+#endif
+#if defined( RCC_APB1ENR_USBEN_Msk)
+	uint32_t  USB_clk     ;
+#endif
+#if defined( RCC_APB1ENR_I2C1EN_Msk )
+	uint32_t  I2C1_clk    ;
+#endif
+#if defined( RCC_APB1ENR_I2S2EN_Msk )
+	uint32_t  I2S2_clk    ;
+#endif
+#if defined( RCC_APB1ENR_I2S3EN_Msk )
+	uint32_t  I2S3_clk    ;
+#endif
+	/*APB1 PERPHS END */
+
+/* Kept Fill Values */
+
+	RCC_Fill_Struct Ct_Fill_Struct ;
+
+
+
+
+
+public :
+
+
+	Ct_RCC ( uint32_t Config = 0UL ) ;
+	Ct_RCC ( const RCC_Fill_Struct& fill_struct ) ;
+	void Fill( const RCC_Fill_Struct& fill_struct )  ;
+	int32_t Update ( void )  ;
+
+	/* SYS */
+
+	inline uint32_t getMCOCLK   ( void ) { return MCO_clk   ; }
+	inline uint32_t getRTCCLK   ( void ) { return RTC_clk   ; }
+	inline uint32_t getPLLCLK   ( void ) { return PLL_clk   ; }
+	inline uint32_t getSYSCLK   ( void ) { return H_clk     ; }
+	inline uint32_t getAHBCLK   ( void ) { return AHB_clk   ; }
+	inline uint32_t getAPB2CLK  ( void ) { return APB2_clk  ; }
+	inline uint32_t getAPB1CLK  ( void ) { return APB1_clk  ; }
+
+	/*AHB BUS */
+
+
+#if defined(RCC_AHBENR_SDIOEN_Msk)
+	inline uint32_t getSDIOCLK  ( void ) { return SDIO_clk  ; }
+	inline void enableSDIO ( void ) { RCC->AHBENR|= ( RCC_AHBENR_SDIOEN_Msk ) ; }
+	inline void disableSDIO( void ) { RCC->AHBENR&= ~( RCC_AHBENR_SDIOEN_Msk ) ; }
+
+#endif
+#if defined(RCC_AHBENR_FSMCEN_Msk)
+	inline uint32_t getFSMCCLK  ( void ) { return AHB_clk  ; }
+	inline void enableFSMC( void ) { RCC->AHBENR |= ( RCC_AHBENR_FSMCEN_Msk ); }
+	inline void disableFSMC( void ) { RCC->AHBENR |= ( RCC_AHBENR_FSMCEN_Msk ); }
+
+#endif
+#if defined(RCC_AHBENR_CRCEN_Msk)
+	inline uint32_t getCRCCLK   ( void ) { return AHB_clk   ; }
+	inline void enableCRC( void ) { RCC->AHBENR |= ( RCC_AHBENR_CRCEN_Msk ); }
+	inline void disableCRC( void ) { RCC->AHBENR |= ( RCC_AHBENR_CRCEN_Msk ); }
+#endif
+#if defined(RCC_AHBENR_FLITFEN_Msk)
+	inline uint32_t getFLITFCLK ( void ) { return FLITF_clk ; }
+	inline void enableFLITF( void ) { RCC->AHBENR |= ( RCC_AHBENR_FLITFEN_Msk ); }
+	inline void disableFLITF( void ) { RCC->AHBENR |= ( RCC_AHBENR_FLITFEN_Msk ); }
+#endif
+#if defined(RCC_AHBENR_SRAMEN_Msk)
+	inline uint32_t getSRAMCLK  ( void ) { return AHB_clk  ; }
+	inline void enableSRAM( void ) { RCC->AHBENR |= ( RCC_AHBENR_SRAMEN_Msk ); }
+	inline void disableSRAM( void ) { RCC->AHBENR |= ( RCC_AHBENR_SRAMEN_Msk ); }
+#endif
+#if defined(RCC_AHBENR_DMA1EN_Msk)
+	inline uint32_t getDMA1CLK  ( void ) { return AHB_clk  ; }
+	inline void enableDMA1( void ) { RCC->AHBENR |= ( RCC_AHBENR_DMA1EN_Msk ); }
+	inline void disableDMA1( void ) { RCC->AHBENR |= ( RCC_AHBENR_DMA1EN_Msk ); }
+#endif
+#if defined(RCC_AHBENR_DMA2EN_Msk)
+	inline uint32_t getDMA2CLK  ( void ) { return AHB_clk  ; }
+	inline void enableDMA2( void ) { RCC->AHBENR |= ( RCC_AHBENR_DMA2EN_Msk ); }
+	inline void disableDMA2( void ) { RCC->AHBENR |= ( RCC_AHBENR_DMA2EN_Msk ); }
+#endif
+
+	/*APB2 BUS */
+#if defined(RCC_APB2ENR_ADC1EN_Msk)
+	inline uint32_t getADC1CLK  ( void ) { return ADC1_clk  ; }
+	inline void enableADC1( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_ADC1EN_Msk ); }
+	inline void disableADC1( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_ADC1EN_Msk ); }
+	inline void resetADC1( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_ADC1RST_Msk ) ; }
+#endif
+#if defined(RCC_APB2ENR_ADC2EN_Msk)
+	inline uint32_t getADC2CLK  ( void ) { return ADC1_clk  ; }
+	inline void enableADC2( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_ADC2EN_Msk ); }
+	inline void disableADC2( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_ADC2EN_Msk ); }
+	inline void resetADC2( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_ADC2RST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_ADC3EN_Msk)
+	inline uint32_t getADC3CLK  ( void ) { return ADC3_clk  ; }
+	inline void enableADC3( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_ADC3EN_Msk ); }
+	inline void disableADC3( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_ADC3EN_Msk ); }
+	inline void resetADC3( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_ADC3RST_Msk ); }
+#endif
+#if (RCC_APB2ENR_IOPAEN_Msk)
+	inline uint32_t getGPIOACLK ( void ) { return APB2_clk ; }
+	inline void enableGPIOA( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_IOPAEN_Msk ); }
+	inline void disableGPIOA( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_IOPAEN_Msk ); }
+	inline void resetGPIOA( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_IOPARST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_IOPBEN_Msk)
+	inline uint32_t getGPIOBCLK ( void ) { return APB2_clk ; }
+	inline void enableGPIOB( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_IOPBEN_Msk ); }
+	inline void disableGPIOB( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_IOPBEN_Msk ); }
+	inline void resetGPIOB( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_IOPBRST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_IOPCEN_Msk)
+	inline uint32_t getGPIOCCLK ( void ) { return APB2_clk ; }
+	inline void enableGPIOC( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_IOPCEN_Msk ); }
+	inline void disableGPIOC( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_IOPCEN_Msk ); }
+	inline void resetGPIOC( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_IOPCRST_Msk ); }
+#endif
+#if defined (RCC_APB2ENR_IOPDEN_Msk)
+	inline uint32_t getGPIODCLK ( void ) { return APB2_clk ; }
+	inline void enableGPIOD( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_IOPDEN_Msk ); }
+	inline void disableGPIOD( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_IOPDEN_Msk ); }
+	inline void resetGPIOD( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_IOPDRST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_IOPEEN_Msk)
+	inline uint32_t getGPIOECLK ( void ) { return APB2_clk ; }
+	inline void enableGPIOE( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_IOPEEN_Msk ); }
+	inline void disableGPIOE( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_IOPEEN_Msk ); }
+	inline void resetGPIOE( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_IOPERST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_IOPFEN_Msk)
+	inline uint32_t getGPIOFCLK ( void ) { return APB2_clk ; }
+	inline void enableGPIOF( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_IOPFEN_Msk ); }
+	inline void disableGPIOF( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_IOPFEN_Msk ); }
+	inline void resetGPIOF( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_IOPFRST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_IOPGEN_Msk)
+	inline uint32_t getGPIOGCLK ( void ) { return APB2_clk ; }
+	inline void enableGPIOG( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_IOPGEN_Msk ); }
+	inline void disableGPIOG( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_IOPGEN_Msk ); }
+	inline void resetGPIOG( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_IOPGRST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_USART1EN_Msk)
+	inline uint32_t getUSART1CLK( void ) { return APB2_clk; }
+	inline void enableUSART1( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_USART1EN_Msk ); }
+	inline void disableUSART1( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_USART1EN_Msk ); }
+	inline void resetUSART1( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_USART1RST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_SPI1EN_Msk)
+	inline uint32_t getSPI1CLK  ( void ) { return APB2_clk  ; }
+	inline void enableSPI1( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_SPI1EN_Msk ); }
+	inline void disableSPI1( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_SPI1EN_Msk ); }
+	inline void resetSPI1( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_SPI1RST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_AFIOEN_Msk)
+	inline uint32_t getAFIOCLK  ( void ) { return APB2_clk  ; }
+	inline void enableAFIO( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_AFIOEN_Msk ); }
+	inline void disableAFIO( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_AFIOEN_Msk ); }
+	inline void resetAFIO( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_AFIORST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_TIM1EN_Msk)
+	inline uint32_t getTIM1CLK  ( void ) { return TIM1_clk  ; }
+	inline void enableTIM1( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_TIM1EN_Msk ); }
+	inline void disableTIM1( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_TIM1EN_Msk ); }
+	inline void resetTIM1( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_TIM1RST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_TIM8EN_Msk)
+	inline uint32_t getTIM8CLK  ( void ) { return TIM1_clk  ; }
+	inline void enableTIM8( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_TIM8EN_Msk ); }
+	inline void disableTIM8( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_TIM8EN_Msk ); }
+	inline void resetTIM8( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_TIM8RST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_TIM9EN_Msk)
+	inline uint32_t getTIM9CLK  ( void ) { return TIM1_clk  ; }
+	inline void enableTIM9( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_TIM9EN_Msk ); }
+	inline void disableTIM9( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_TIM9EN_Msk ); }
+	inline void resetTIM9( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_TIM9RST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_TIM10EN_Msk)
+	inline uint32_t getTIM10CLK ( void ) { return TIM1_clk ; }
+	inline void enableTIM10( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_TIM10EN_Msk ); }
+	inline void disableTIM10( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_TIM10EN_Msk ); }
+	inline void resetTIM10( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_TIM10RST_Msk ); }
+#endif
+#if defined(RCC_APB2ENR_TIM11EN_Msk)
+	inline uint32_t getTIM11CLK ( void ) { return TIM1_clk ; }
+	inline void enableTIM11( void ) { RCC->APB2ENR |= ( RCC_APB2ENR_TIM11EN_Msk ); }
+	inline void disableTIM11( void ) { RCC->APB2ENR &= ~( RCC_APB2ENR_TIM11EN_Msk ); }
+	inline void resetTIM11( void ) { RCC->APB2RSTR |= ( RCC_APB2RSTR_TIM11RST_Msk ); }
+#endif
+
+
+	/*APB1 BUS */
+#if defined(RCC_APB1ENR_TIM2EN_Msk)
+	inline uint32_t getTIM2CLK  ( void ) { return TIM2_clk  ; }
+	inline void enableTIM2( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM2EN_Msk ) ;}
+	inline void disableTIM2( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM2EN_Msk ) ;}
+	inline void resetTIM2( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM2RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM3EN_Msk)
+	inline uint32_t getTIM3CLK  ( void ) { return TIM2_clk  ; }
+	inline void enableTIM3( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM3EN_Msk ) ;}
+	inline void disableTIM3( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM3EN_Msk ) ;}
+	inline void resetTIM3( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM3RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM4EN_Msk)
+	inline uint32_t getTIM4CLK  ( void ) { return TIM2_clk  ; }
+	inline void enableTIM4( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM4EN_Msk ) ;}
+	inline void disableTIM4( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM4EN_Msk ) ;}
+	inline void resetTIM4( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM4RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM5EN_Msk)
+	inline uint32_t getTIM5CLK  ( void ) { return TIM2_clk  ; }
+	inline void enableTIM5( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM5EN_Msk ) ;}
+	inline void disableTIM5( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM5EN_Msk ) ;}
+	inline void resetTIM5( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM5RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM6EN_Msk)
+	inline uint32_t getTIM6CLK  ( void ) { return TIM2_clk  ; }
+	inline void enableTIM6( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM6EN_Msk ) ;}
+	inline void disableTIM6( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM6EN_Msk ) ;}
+	inline void resetTIM6( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM6RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM7EN_Msk)
+	inline uint32_t getTIM7CLK  ( void ) { return TIM2_clk  ; }
+	inline void enableTIM7( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM7EN_Msk ) ;}
+	inline void disableTIM7( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM7EN_Msk ) ;}
+	inline void resetTIM7( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM7RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM12EN_Msk)
+	inline uint32_t getTIM12CLK ( void ) { return TIM2_clk ; }
+	inline void enableTIM12( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM12EN_Msk ) ;}
+	inline void disableTIM12( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM12EN_Msk ) ;}
+	inline void resetTIM12( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM12RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM13EN_Msk)
+	inline uint32_t getTIM13CLK ( void ) { return TIM2_clk ; }
+	inline void enableTIM13( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM13EN_Msk ) ;}
+	inline void disableTIM13( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM13EN_Msk ) ;}
+	inline void resetTIM13( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM13RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_TIM14EN_Msk)
+	inline uint32_t getTIM14CLK ( void ) { return TIM2_clk ; }
+	inline void enableTIM14( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_TIM14EN_Msk ) ;}
+	inline void disableTIM14( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_TIM14EN_Msk ) ;}
+	inline void resetTIM14( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_TIM14RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_I2C1EN_Msk)
+	inline uint32_t getI2C1CLK  ( void ) { return APB1_clk  ; }
+	inline void enableI2C1( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_I2C1EN_Msk ) ;}
+	inline void disableI2C1( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_I2C1EN_Msk ) ;}
+	inline void resetI2C1( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_I2C1RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_I2S2EN_Msk)
+	inline uint32_t getI2S2CLK  ( void ) { return I2S2_clk  ; }
+	inline void enableI2S2( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_I2S2EN_Msk ) ;}
+	inline void disableI2S2( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_I2S2EN_Msk ) ;}
+	inline void resetI2S2( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_I2S2RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_I2S3EN_Msk)
+	inline uint32_t getI2S3CLK  ( void ) { return I2S3_clk  ; }
+	inline void enableI2S3( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_I2S3EN_Msk ) ;}
+	inline void disableI2S3( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_I2S3EN_Msk ) ;}
+	inline void resetI2S3( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_I2S3RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_USBEN_Msk)
+	inline uint32_t getUSBCLK   ( void ) { return USB_clk   ; }
+	inline void enableUSB( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_USBEN_Msk ) ;}
+	inline void disableUSB( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_USBEN_Msk ) ;}
+	inline void resetUSB( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_USBRST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_CANEN_Msk)
+	inline uint32_t getCANCLK   ( void ) { return APB1_clk   ; }
+	inline void enableCAN( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_CANEN_Msk ) ;}
+	inline void disableCAN( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_CANEN_Msk ) ;}
+	inline void resetCAN( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_CANRST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_DACEN_Msk)
+	inline uint32_t getDACCLK   ( void ) { return APB1_clk   ; }
+	inline void enableDAC( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_DACEN_Msk ) ;}
+	inline void disableDAC( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_DACEN_Msk ) ;}
+	inline void resetDAC( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_DACRST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_SPI2EN_Msk)
+	inline uint32_t getSPI2CLK  ( void ) { return APB1_clk  ; }
+	inline void enableSPI2( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_SPI2EN_Msk ) ;}
+	inline void disableSPI2( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_SPI2EN_Msk ) ;}
+	inline void resetSPI2( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_SPI2RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_SPI3EN_Msk)
+	inline uint32_t getSPI3CLK  ( void ) { return APB1_clk  ; }
+	inline void enableSPI3( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_SPI3EN_Msk ) ;}
+	inline void disableSPI3( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_SPI3EN_Msk ) ;}
+	inline void resetSPI3( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_SPI3RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_WWDGEN_Msk)
+	inline uint32_t getWWDGCLK  ( void ) { return APB1_clk  ; }
+	inline void enableWWDG( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_WWDGEN_Msk ) ;}
+	inline void disableWWDG( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_WWDGEN_Msk ) ;}
+	inline void resetWWDG( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_WWDGRST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_BKPEN_Msk)
+	inline uint32_t getBKPCLK   ( void ) { return APB1_clk   ; }
+	inline void enableBKP( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_BKPEN_Msk ) ;}
+	inline void disableBKP( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_BKPEN_Msk ) ;}
+	inline void resetBKP( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_BKPRST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_PWREN_Msk)
+	inline uint32_t getPWRCLK   ( void ) { return APB1_clk   ; }
+	inline void enablePWR( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_PWREN_Msk ) ;}
+	inline void disablePWR( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_PWREN_Msk ) ;}
+	inline void resetPWR( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_PWRRST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_UART5EN_Msk)
+	inline uint32_t getUART5CLK ( void ) { return APB1_clk ; }
+	inline void enableUART5( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_UART5EN_Msk ) ;}
+	inline void disableUART5( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_UART5EN_Msk ) ;}
+	inline void resetUART5( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_UART5RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_UART4EN_Msk)
+	inline uint32_t getUART4CLK ( void ) { return APB1_clk ; }
+	inline void enableUART4( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_UART4EN_Msk ) ;}
+	inline void disableUART4( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_UART4EN_Msk ) ;}
+	inline void resetUART4( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_UART4RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_USART3EN_Msk)
+	inline uint32_t getUSART3CLK( void ) { return APB1_clk; }
+	inline void enableUSART3( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_USART3EN_Msk ) ;}
+	inline void disableUSART3( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_USART3EN_Msk ) ;}
+	inline void resetUSART3( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_USART3RST_Msk ) ;}
+#endif
+#if defined(RCC_APB1ENR_USART2EN_Msk)
+	inline uint32_t getUSART2CLK( void ) { return APB1_clk; }
+	inline void enableUSART2( void ) { RCC->APB1ENR |= ( RCC_APB1ENR_USART2EN_Msk ) ;}
+	inline void disableUSART2( void ) { RCC->APB1ENR &= ~( RCC_APB1ENR_USART2EN_Msk ) ;}
+	inline void resetUSART2( void ) { RCC->APB1RSTR |= ( RCC_APB1RSTR_USART2RST_Msk ) ;}
+#endif
+
+
+
+
+
+
+
+
+};
+
+
+
+#endif /* DP_INC_CT_RCC_H_ */

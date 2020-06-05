@@ -1,0 +1,54 @@
+
+#include "main.h"
+#include <stdint.h>
+#include <DP_USB.h>
+
+int main(void)
+{
+	Ct_RCC sysctl( BLUEPILL_CONFIG ) ;
+
+	if ( sysctl.Update() != 1 )
+	{
+		while(1)
+		{
+			//BREAK;
+		}
+	}
+	sysctl.enableUSB();
+	sysctl.enableGPIOC();
+	PMA my_pma ;
+	uint16_t my_ptr = 3 ;
+	my_pma.write_hw( 0x1234 , my_ptr);
+	uint16_t my_val ;
+	my_val = my_pma.read_b(my_ptr);
+
+	if ( my_val != 0X1234)
+	{
+		while(1);
+
+	}
+
+
+	systick.Update( 4000 , sysctl.getSYSCLK() );
+
+	//OUTPUT
+	GPIOC->CRH = ( 1 << GPIO_CRH_MODE13_Pos );
+
+
+
+
+  while (1)
+  {
+
+	  GPIOC->ODR |= ( 1 << 13 );
+	  systick.delay(5000);
+	  GPIOC->ODR &= ~( 1 << 13 );
+	  systick.delay(5000);
+
+
+  }
+
+
+
+}
+

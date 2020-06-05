@@ -1,0 +1,1925 @@
+19:07:03 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:16:2: error: 'systctl' was not declared in this scope
+  systctl.enableUSB();
+  ^~~~~~~
+../Core/Src/main.cpp:16:2: note: suggested alternative: 'sysctl'
+  systctl.enableUSB();
+  ^~~~~~~
+  sysctl
+make: *** [Core/Src/subdir.mk:36: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:38:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:160:35: error: invalid initialization of non-const reference of type 'EP_Config_S&' from an rvalue of type 'EP_Config_S*'
+  int32_t ret = PMA_allocate( this );
+                                   ^
+../Drivers/DP_Src/DP_USB.cpp:34:9: note: in passing argument 1 of 'int32_t PMA_allocate(EP_Config_S&)'
+ int32_t PMA_allocate( EP_Config_S& ep )
+         ^~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:160:10: warning: unused variable 'ret' [-Wunused-variable]
+  int32_t ret = PMA_allocate( this );
+          ^~~
+../Drivers/DP_Src/DP_USB.cpp:161:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:10:53 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:16:2: error: 'systctl' was not declared in this scope
+  systctl.enableUSB();
+  ^~~~~~~
+../Core/Src/main.cpp:16:2: note: suggested alternative: 'sysctl'
+  systctl.enableUSB();
+  ^~~~~~~
+  sysctl
+make: *** [Core/Src/subdir.mk:36: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:38:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:160:60: error: invalid static_cast from type 'EP_Config_S*' to type 'EP_Config_S&'
+  int32_t ret = PMA_allocate( static_cast<EP_Config_S&>(this) );
+                                                            ^
+../Drivers/DP_Src/DP_USB.cpp:160:10: warning: unused variable 'ret' [-Wunused-variable]
+  int32_t ret = PMA_allocate( static_cast<EP_Config_S&>(this) );
+          ^~~
+../Drivers/DP_Src/DP_USB.cpp:161:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:11:20 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:16:2: error: 'systctl' was not declared in this scope
+  systctl.enableUSB();
+  ^~~~~~~
+../Core/Src/main.cpp:16:2: note: suggested alternative: 'sysctl'
+  systctl.enableUSB();
+  ^~~~~~~
+  sysctl
+make: *** [Core/Src/subdir.mk:36: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:38:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:160:10: warning: unused variable 'ret' [-Wunused-variable]
+  int32_t ret = PMA_allocate( *this );
+          ^~~
+../Drivers/DP_Src/DP_USB.cpp:161:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:11:37 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5256	    120	   1612	   6988	   1b4c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+19:12:16 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:38:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:160:10: warning: unused variable 'ret' [-Wunused-variable]
+  int32_t ret = PMA_allocate( static_cast<EP_Config_S&>(*(this)) );
+          ^~~
+../Drivers/DP_Src/DP_USB.cpp:161:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5256	    120	   1612	   6988	   1b4c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+19:13:12 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:38:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5256	    120	   1612	   6988	   1b4c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+18:48:43 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:39:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:56:26: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+      ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                      ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:69:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:74:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:96:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:109:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:114:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:131:10: error: expected '(' before '{' token
+  else if { ep.EP_Dir == EP_dir_E::EP_DIR_BID ){
+          ^
+../Drivers/DP_Src/DP_USB.cpp:189:2: error: 'else' without a previous 'if'
+  else{
+  ^~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:317:8: error: 'ep' was not declared in this scope
+  if ( (ep.EP_Dir == EP_dir_E::EP_DIR_BID ) &&
+        ^~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:49:15 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:39:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:56:26: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+      ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                      ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:69:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:74:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:96:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:109:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:114:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:131:10: error: expected '(' before '{' token
+  else if { ep.EP_Dir == EP_dir_E::EP_DIR_BID ){
+          ^
+../Drivers/DP_Src/DP_USB.cpp:200:44: error: a function-definition is not allowed here before '{' token
+ inline void  USBINT_Enable( uint32_t mask ){
+                                            ^
+../Drivers/DP_Src/DP_USB.cpp:206:45: error: a function-definition is not allowed here before '{' token
+ inline void  USBINT_Disable( uint32_t mask ){
+                                             ^
+../Drivers/DP_Src/DP_USB.cpp:211:1: error: a function-definition is not allowed here before '{' token
+ {
+ ^
+../Drivers/DP_Src/DP_USB.cpp:216:1: error: a function-definition is not allowed here before '{' token
+ {
+ ^
+../Drivers/DP_Src/DP_USB.cpp:221:1: error: a function-definition is not allowed here before '{' token
+ {
+ ^
+../Drivers/DP_Src/DP_USB.cpp:226:1: error: a function-definition is not allowed here before '{' token
+ {
+ ^
+../Drivers/DP_Src/DP_USB.cpp:231:1: error: a function-definition is not allowed here before '{' token
+ {
+ ^
+../Drivers/DP_Src/DP_USB.cpp:240:1: error: a function-definition is not allowed here before '{' token
+ {
+ ^
+../Drivers/DP_Src/DP_USB.cpp:248:1: error: a function-definition is not allowed here before '{' token
+ {
+ ^
+../Drivers/DP_Src/DP_USB.cpp:292:28: error: expected primary-expression before 'void'
+ EP_Config_S::EP_Config_S ( void ){
+                            ^~~~
+../Drivers/DP_Src/DP_USB.cpp:292:33: error: cannot call constructor 'EP_Config_S::EP_Config_S' directly [-fpermissive]
+ EP_Config_S::EP_Config_S ( void ){
+                                 ^
+../Drivers/DP_Src/DP_USB.cpp:292:33: note: for a function-style cast, remove the redundant '::EP_Config_S'
+../Drivers/DP_Src/DP_USB.cpp:312:31: error: qualified-id in declaration before '(' token
+ int32_t EP_Config_S::allocate ( void )
+                               ^
+../Drivers/DP_Src/DP_USB.cpp:341:1: error: expected '}' at end of input
+ }
+ ^
+../Drivers/DP_Src/DP_USB.cpp:341:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:49:31 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:39:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:56:26: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+      ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                      ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:69:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:74:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:96:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:109:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:114:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:131:10: error: expected '(' before '{' token
+  else if { ep.EP_Dir == EP_dir_E::EP_DIR_BID ){
+          ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:314:8: error: 'ep' was not declared in this scope
+  if ( (ep.EP_Dir == EP_dir_E::EP_DIR_BID ) &&
+        ^~
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:194:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:49:59 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:83:26: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+      ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                      ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:96:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:101:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:123:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:136:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:141:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:158:10: error: expected '(' before '{' token
+  else if { ep.EP_Dir == EP_dir_E::EP_DIR_BID ){
+          ^
+../Drivers/DP_Src/DP_USB.cpp:221:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:50:11 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:83:26: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+      ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                      ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:96:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:101:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:123:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:136:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:141:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:164:29: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+         ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                         ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:169:29: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+         ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                         ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:182:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:187:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:192:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:197:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: At global scope:
+../Drivers/DP_Src/DP_USB.cpp:221:1: error: expected declaration before '}' token
+ }
+ ^
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:50:22 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:83:26: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+      ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                      ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:96:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:101:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:123:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+       ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:136:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:141:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+        ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:164:29: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+         ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                         ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:169:29: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+         ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                         ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:182:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:187:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:192:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:197:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint32_t* {aka long unsigned int*}' [-fpermissive]
+          ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:51:40 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:83:62: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+      ep.EP_TX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr) ;
+                                                              ^
+../Drivers/DP_Src/DP_USB.cpp:96:63: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+       ep.EP_TX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr) ;
+                                                               ^
+../Drivers/DP_Src/DP_USB.cpp:101:63: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+       ep.EP_TX1_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                               ^
+../Drivers/DP_Src/DP_USB.cpp:123:63: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+       ep.EP_RX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                               ^
+../Drivers/DP_Src/DP_USB.cpp:136:64: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+        ep.EP_RX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                                ^
+../Drivers/DP_Src/DP_USB.cpp:141:64: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+        ep.EP_RX1_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                                ^
+../Drivers/DP_Src/DP_USB.cpp:164:65: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+         ep.EP_RX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr) ;
+                                                                 ^
+../Drivers/DP_Src/DP_USB.cpp:169:65: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+         ep.EP_TX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                                 ^
+../Drivers/DP_Src/DP_USB.cpp:182:66: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+          ep.EP_RX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                                  ^
+../Drivers/DP_Src/DP_USB.cpp:187:66: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+          ep.EP_RX1_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                                  ^
+../Drivers/DP_Src/DP_USB.cpp:192:66: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+          ep.EP_TX0_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                                  ^
+../Drivers/DP_Src/DP_USB.cpp:197:66: error: invalid static_cast from type 'uint32_t {aka long unsigned int}' to type 'uint32_t* {aka long unsigned int*}'
+          ep.EP_TX1_Ptr = static_cast<uint32_t*>(pma.pma_last_addr)  ;
+                                                                  ^
+../Drivers/DP_Src/DP_USB.cpp:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:54:39 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'void PMA_start()':
+../Drivers/DP_Src/DP_USB.cpp:26:41: error: invalid conversion from 'long unsigned int' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+  pma.pma_last_unused_addr = USB_PMAADDR + 128UL ;
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:83:26: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+      ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                      ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:96:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+       ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:101:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+       ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:123:27: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+       ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                       ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:136:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+        ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:141:28: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+        ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                        ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:164:29: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+         ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                         ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:169:29: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+         ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                         ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:182:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+          ep.EP_RX0_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:187:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+          ep.EP_RX1_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:192:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+          ep.EP_TX0_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:197:30: error: invalid conversion from 'uint32_t {aka long unsigned int}' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+          ep.EP_TX1_Ptr = pma.pma_last_addr ;
+                          ~~~~^~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:56:01 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'void PMA_start()':
+../Drivers/DP_Src/DP_USB.cpp:26:41: error: invalid conversion from 'long unsigned int' to 'uint8_t* {aka unsigned char*}' [-fpermissive]
+  pma.pma_last_unused_addr = USB_PMAADDR + 128UL ;
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:56:32 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'void PMA_start()':
+../Drivers/DP_Src/DP_USB.cpp:26:70: error: invalid static_cast from type 'long unsigned int' to type 'uint8_t* {aka unsigned char*}'
+  pma.pma_last_unused_addr = static_cast<uint8_t*>(USB_PMAADDR + 128UL) ;
+                                                                      ^
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:56:48 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5256	    120	   1612	   6988	   1b4c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.list
+ 
+Finished building: DigiProbe.bin
+ 
+10:25:31 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:66:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:410:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( this->EP_Num > 7UL )
+       ~~~~~~~~~~~~~^~~~~
+../Drivers/DP_Src/DP_USB.cpp:427:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5256	    120	   1612	   6988	   1b4c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+10:31:57 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/Int.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/Int.d" -MT"Core/Src/Int.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/Int.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/Int.cpp:93:1: error: expected '}' at end of input
+ }
+ ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/Int.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:32:44 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/Int.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/Int.d" -MT"Core/Src/Int.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/Int.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5368	    120	   1612	   7100	   1bbc	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+10:33:34 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5372	    120	   1612	   7104	   1bc0	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.list
+Finished building: DigiProbe.bin
+ 
+ 
+10:34:44 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5372	    120	   1612	   7104	   1bc0	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+10:38:49 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5340	    120	   1612	   7072	   1ba0	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+10:41:27 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5340	    120	   1612	   7072	   1ba0	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+10:47:46 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/Ct_RCC.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/Ct_RCC.d" -MT"Drivers/DP_Src/Ct_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/Ct_RCC.o"
+../Drivers/DP_Src/Ct_RCC.cpp: In member function 'int32_t Ct_RCC::Update()':
+../Drivers/DP_Src/Ct_RCC.cpp:178:11: warning: variable 'hsisr' set but not used [-Wunused-but-set-variable]
+  uint32_t hsisr = 0 ;
+           ^~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5340	    120	   1612	   7072	   1ba0	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+Finished building: DigiProbe.list
+ 
+ 
+10:58:14 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/Ct_RCC.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/Ct_RCC.d" -MT"Drivers/DP_Src/Ct_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/Ct_RCC.o"
+../Drivers/DP_Src/Ct_RCC.cpp: In member function 'int32_t Ct_RCC::Update()':
+../Drivers/DP_Src/Ct_RCC.cpp:179:11: warning: variable 'hsisr' set but not used [-Wunused-but-set-variable]
+  uint32_t hsisr = 0 ;
+           ^~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5348	    120	   1612	   7080	   1ba8	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+11:03:52 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/Ct_RCC.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/Ct_RCC.d" -MT"Drivers/DP_Src/Ct_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/Ct_RCC.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Drivers/DP_Src/Ct_RCC.cpp: In member function 'int32_t Ct_RCC::Update()':
+../Drivers/DP_Src/Ct_RCC.cpp:451:8: error: 'class Ct_RCC' has no member named 'systick_clk'
+  this->systick_clk = systick.getFreq();
+        ^~~~~~~~~~~
+make: *** [Drivers/DP_Src/subdir.mk:27: Drivers/DP_Src/Ct_RCC.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+11:04:09 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/Ct_RCC.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/Ct_RCC.d" -MT"Drivers/DP_Src/Ct_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/Ct_RCC.o"
+../Drivers/DP_Src/Ct_RCC.cpp: In member function 'int32_t Ct_RCC::Update()':
+../Drivers/DP_Src/Ct_RCC.cpp:179:11: warning: variable 'hsisr' set but not used [-Wunused-but-set-variable]
+  uint32_t hsisr = 0 ;
+           ^~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5324	    120	   1612	   7056	   1b90	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+12:04:36 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:42:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:388:60: error: 'ep' was not declared in this scope
+       ( (this->EP_RBT == EP_bufftype_E::EP_SINGLE_BUFF && !ep.EP_RX0_BSize)||
+                                                            ^~
+../Drivers/DP_Src/DP_USB.cpp:421:31: error: 'USB_EP0R_EPTYPE_Pos' was not declared in this scope
+   ep_val|= ( this->EP_Type << USB_EP0R_EPTYPE_Pos ) ;
+                               ^~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:421:31: note: suggested alternative: 'USB_EP0R_EP_TYPE_Pos'
+   ep_val|= ( this->EP_Type << USB_EP0R_EPTYPE_Pos ) ;
+                               ^~~~~~~~~~~~~~~~~~~
+                               USB_EP0R_EP_TYPE_Pos
+../Drivers/DP_Src/DP_USB.cpp:423:73: error: 'USR_EP0R_EP_KIND_Pos' was not declared in this scope
+   ep_val|= ( ( this->EP_Dir == EP_dir_E::EP_DIR_BID ? (1UL) : (0UL)) << USR_EP0R_EP_KIND_Pos );
+                                                                         ^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:423:73: note: suggested alternative: 'USB_EP0R_EP_KIND_Pos'
+   ep_val|= ( ( this->EP_Dir == EP_dir_E::EP_DIR_BID ? (1UL) : (0UL)) << USR_EP0R_EP_KIND_Pos );
+                                                                         ^~~~~~~~~~~~~~~~~~~~
+                                                                         USB_EP0R_EP_KIND_Pos
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:05:45 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:42:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:421:31: error: 'USB_EP0R_EPTYPE_Pos' was not declared in this scope
+   ep_val|= ( this->EP_Type << USB_EP0R_EPTYPE_Pos ) ;
+                               ^~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:421:31: note: suggested alternative: 'USB_EP0R_EP_TYPE_Pos'
+   ep_val|= ( this->EP_Type << USB_EP0R_EPTYPE_Pos ) ;
+                               ^~~~~~~~~~~~~~~~~~~
+                               USB_EP0R_EP_TYPE_Pos
+../Drivers/DP_Src/DP_USB.cpp:423:73: error: 'USR_EP0R_EP_KIND_Pos' was not declared in this scope
+   ep_val|= ( ( this->EP_Dir == EP_dir_E::EP_DIR_BID ? (1UL) : (0UL)) << USR_EP0R_EP_KIND_Pos );
+                                                                         ^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:423:73: note: suggested alternative: 'USB_EP0R_EP_KIND_Pos'
+   ep_val|= ( ( this->EP_Dir == EP_dir_E::EP_DIR_BID ? (1UL) : (0UL)) << USR_EP0R_EP_KIND_Pos );
+                                                                         ^~~~~~~~~~~~~~~~~~~~
+                                                                         USB_EP0R_EP_KIND_Pos
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:05:58 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:42:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:423:73: error: 'USR_EP0R_EP_KIND_Pos' was not declared in this scope
+   ep_val|= ( ( this->EP_Dir == EP_dir_E::EP_DIR_BID ? (1UL) : (0UL)) << USR_EP0R_EP_KIND_Pos );
+                                                                         ^~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:423:73: note: suggested alternative: 'USB_EP0R_EP_KIND_Pos'
+   ep_val|= ( ( this->EP_Dir == EP_dir_E::EP_DIR_BID ? (1UL) : (0UL)) << USR_EP0R_EP_KIND_Pos );
+                                                                         ^~~~~~~~~~~~~~~~~~~~
+                                                                         USB_EP0R_EP_KIND_Pos
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:06:27 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In function 'int32_t PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:42:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for ( int i = 0 ; i < pma.ep_nums.size() ; i++ )
+                    ~~^~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5324	    120	   1612	   7056	   1b90	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+12:06:59 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5324	    120	   1612	   7056	   1b90	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+19:22:05 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+In file included from ../Drivers/DP_Src/DP_USB.cpp:9:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:103:24: error: 'EP_Config_S' has not been declared
+  int32_t PMA_allocate( EP_Config_S& ep );
+                        ^~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: At global scope:
+../Drivers/DP_Src/DP_USB.cpp:28:51: error: no 'uint16_t PMA::read(uint16_t, uint16_t*)' member function declared in class 'PMA'
+ uint16_t PMA::read( uint16_t val , uint16_t * ptr )
+                                                   ^
+../Drivers/DP_Src/DP_USB.cpp:33:48: error: no 'uint8_t PMA::read(uint8_t, uint8_t*)' member function declared in class 'PMA'
+ uint8_t PMA::read( uint8_t val , uint8_t * ptr )
+                                                ^
+../Drivers/DP_Src/DP_USB.cpp:40:47: error: no 'void PMA::write(uint16_t, uint16_t*)' member function declared in class 'PMA'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+                                               ^
+../Drivers/DP_Src/DP_USB.cpp:49:9: error: prototype for 'int32_t PMA::PMA_allocate(EP_Config_S&)' does not match any in class 'PMA'
+ int32_t PMA::PMA_allocate( EP_Config_S& ep )
+         ^~~
+In file included from ../Drivers/DP_Src/DP_USB.cpp:9:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:103:10: error: candidate is: int32_t PMA::PMA_allocate(int&)
+  int32_t PMA_allocate( EP_Config_S& ep );
+          ^~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getTXStat()':
+../Drivers/DP_Src/DP_USB.cpp:271:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:283:8: error: 'struct EP_Config_S' has no member named 'EP_TX1_Ptr'; did you mean 'EP_TX0_Ptr'?
+  this->EP_TX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_TX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp:285:8: error: 'struct EP_Config_S' has no member named 'EP_RX1_Ptr'; did you mean 'EP_RX0_Ptr'?
+  this->EP_RX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_RX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:332:8: error: 'PMA_allocate' was not declared in this scope
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:332:8: note: suggested alternative: 'allocate'
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+        allocate
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:22:46 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: At global scope:
+../Drivers/DP_Src/DP_USB.cpp:28:51: error: no 'uint16_t PMA::read(uint16_t, uint16_t*)' member function declared in class 'PMA'
+ uint16_t PMA::read( uint16_t val , uint16_t * ptr )
+                                                   ^
+../Drivers/DP_Src/DP_USB.cpp:33:48: error: no 'uint8_t PMA::read(uint8_t, uint8_t*)' member function declared in class 'PMA'
+ uint8_t PMA::read( uint8_t val , uint8_t * ptr )
+                                                ^
+../Drivers/DP_Src/DP_USB.cpp:40:47: error: no 'void PMA::write(uint16_t, uint16_t*)' member function declared in class 'PMA'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+                                               ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:88:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_TX0_BSize , (uint16_t*)( ep.EP_Num * 8UL + 1UL ) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:89:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:90:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_RX0_BSize , (uint16_t*)( ep.EP_Num * 8UL + 3UL ) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getTXStat()':
+../Drivers/DP_Src/DP_USB.cpp:271:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:283:8: error: 'struct EP_Config_S' has no member named 'EP_TX1_Ptr'; did you mean 'EP_TX0_Ptr'?
+  this->EP_TX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_TX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp:285:8: error: 'struct EP_Config_S' has no member named 'EP_RX1_Ptr'; did you mean 'EP_RX0_Ptr'?
+  this->EP_RX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_RX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:332:8: error: 'PMA_allocate' was not declared in this scope
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:332:8: note: suggested alternative: 'allocate'
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+        allocate
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:23:13 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: At global scope:
+../Drivers/DP_Src/DP_USB.cpp:28:10: error: prototype for 'uint16_t PMA::read(uint16_t, uint16_t*)' does not match any in class 'PMA'
+ uint16_t PMA::read( uint16_t val , uint16_t * ptr )
+          ^~~
+In file included from ../Drivers/DP_Src/DP_USB.cpp:9:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:144:17: error: candidates are: uint8_t PMA::read(uint8_t*)
+  inline uint8_t read( uint8_t* ptr );
+                 ^~~~
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:143:18: error:                 uint16_t PMA::read(uint16_t*)
+  inline uint16_t read( uint16_t* ptr );
+                  ^~~~
+../Drivers/DP_Src/DP_USB.cpp:33:9: error: prototype for 'uint8_t PMA::read(uint8_t, uint8_t*)' does not match any in class 'PMA'
+ uint8_t PMA::read( uint8_t val , uint8_t * ptr )
+         ^~~
+In file included from ../Drivers/DP_Src/DP_USB.cpp:9:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:144:17: error: candidates are: uint8_t PMA::read(uint8_t*)
+  inline uint8_t read( uint8_t* ptr );
+                 ^~~~
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:143:18: error:                 uint16_t PMA::read(uint16_t*)
+  inline uint16_t read( uint16_t* ptr );
+                  ^~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getTXStat()':
+../Drivers/DP_Src/DP_USB.cpp:271:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:283:8: error: 'struct EP_Config_S' has no member named 'EP_TX1_Ptr'; did you mean 'EP_TX0_Ptr'?
+  this->EP_TX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_TX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp:285:8: error: 'struct EP_Config_S' has no member named 'EP_RX1_Ptr'; did you mean 'EP_RX0_Ptr'?
+  this->EP_RX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_RX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:332:8: error: 'PMA_allocate' was not declared in this scope
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:332:8: note: suggested alternative: 'allocate'
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+        allocate
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:23:39 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: At global scope:
+../Drivers/DP_Src/DP_USB.cpp:28:10: error: prototype for 'uint16_t PMA::read(uint16_t, uint16_t*)' does not match any in class 'PMA'
+ uint16_t PMA::read( uint16_t val , uint16_t * ptr )
+          ^~~
+In file included from ../Drivers/DP_Src/DP_USB.cpp:9:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:144:18: error: candidates are: uint8_t PMA::read(uint8_t*)
+  inline uint8_t  read( uint8_t* ptr );
+                  ^~~~
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:143:18: error:                 uint16_t PMA::read(uint16_t*)
+  inline uint16_t read( uint16_t* ptr );
+                  ^~~~
+../Drivers/DP_Src/DP_USB.cpp:33:9: error: prototype for 'uint8_t PMA::read(uint8_t, uint8_t*)' does not match any in class 'PMA'
+ uint8_t PMA::read( uint8_t val , uint8_t * ptr )
+         ^~~
+In file included from ../Drivers/DP_Src/DP_USB.cpp:9:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:144:18: error: candidates are: uint8_t PMA::read(uint8_t*)
+  inline uint8_t  read( uint8_t* ptr );
+                  ^~~~
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:143:18: error:                 uint16_t PMA::read(uint16_t*)
+  inline uint16_t read( uint16_t* ptr );
+                  ^~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getTXStat()':
+../Drivers/DP_Src/DP_USB.cpp:271:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:283:8: error: 'struct EP_Config_S' has no member named 'EP_TX1_Ptr'; did you mean 'EP_TX0_Ptr'?
+  this->EP_TX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_TX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp:285:8: error: 'struct EP_Config_S' has no member named 'EP_RX1_Ptr'; did you mean 'EP_RX0_Ptr'?
+  this->EP_RX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_RX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:332:8: error: 'PMA_allocate' was not declared in this scope
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:332:8: note: suggested alternative: 'allocate'
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+        allocate
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:24:38 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getTXStat()':
+../Drivers/DP_Src/DP_USB.cpp:271:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:283:8: error: 'struct EP_Config_S' has no member named 'EP_TX1_Ptr'; did you mean 'EP_TX0_Ptr'?
+  this->EP_TX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_TX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp:285:8: error: 'struct EP_Config_S' has no member named 'EP_RX1_Ptr'; did you mean 'EP_RX0_Ptr'?
+  this->EP_RX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_RX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::allocate()':
+../Drivers/DP_Src/DP_USB.cpp:332:8: error: 'PMA_allocate' was not declared in this scope
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:332:8: note: suggested alternative: 'allocate'
+  if ( !PMA_allocate( static_cast<EP_Config_S&>(*(this)) )  ){
+        ^~~~~~~~~~~~
+        allocate
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:25:01 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getTXStat()':
+../Drivers/DP_Src/DP_USB.cpp:271:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:283:8: error: 'struct EP_Config_S' has no member named 'EP_TX1_Ptr'; did you mean 'EP_TX0_Ptr'?
+  this->EP_TX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_TX0_Ptr
+../Drivers/DP_Src/DP_USB.cpp:285:8: error: 'struct EP_Config_S' has no member named 'EP_RX1_Ptr'; did you mean 'EP_RX0_Ptr'?
+  this->EP_RX1_Ptr = nullptr;
+        ^~~~~~~~~~
+        EP_RX0_Ptr
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:25:14 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getTXStat()':
+../Drivers/DP_Src/DP_USB.cpp:271:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_TX_Msk ) >> USB_EP0R_STAT_TX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:26:03 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'EP_stat_E EP_Config_S::getRXStat()':
+../Drivers/DP_Src/DP_USB.cpp:266:68: error: invalid conversion from 'long unsigned int' to 'EP_stat_E' [-fpermissive]
+  return ((*(&(USB->EP0R) + this->EP_Num ) & USB_EP0R_STAT_RX_Msk ) >> USB_EP0R_STAT_RX_Pos );
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:26:22 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:27:10 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:18: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+               ~~~^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 1 of 'void PMA::write(uint16_t, uint16_t*)'
+ void PMA::write( uint16_t val , uint16_t *ptr )
+      ^~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:28:20 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:28: error: cast from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' loses precision [-fpermissive]
+  this->write( (uint16_t)ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+                            ^~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:89:28: error: cast from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' loses precision [-fpermissive]
+  this->write( (uint16_t)ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+                            ^~~~~~~~~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:29:00 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:73:24: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  ep.EP_RX0_Ptr = this->ptr_unalloc ;
+                  ~~~~~~^~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:78:24: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  ep.EP_TX0_Ptr = this->ptr_unalloc ;
+                  ~~~~~~^~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:284:21: error: cannot convert 'std::nullptr_t' to 'uint16_t {aka short unsigned int}' in assignment
+  this->EP_TX0_Ptr = nullptr;
+                     ^~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:285:21: error: cannot convert 'std::nullptr_t' to 'uint16_t {aka short unsigned int}' in assignment
+  this->EP_RX0_Ptr = nullptr;
+                     ^~~~~~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:29:19 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:73:24: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  ep.EP_RX0_Ptr = this->ptr_unalloc ;
+                  ~~~~~~^~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:78:24: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  ep.EP_TX0_Ptr = this->ptr_unalloc ;
+                  ~~~~~~^~~~~~~~~~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:29:50 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:18:14: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+ :ptr_unalloc((uint16_t*)(32UL)),
+              ^~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:30:03 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'uint8_t PMA::read(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:35:9: error: invalid operands of types 'uint8_t* {aka unsigned char*}' and 'int' to binary 'operator%'
+  if (ptr%2){--ptr; }
+      ~~~^~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:31:11 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:87:33: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL) );
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 2 of 'void PMA::write(uint16_t, uint16_t)'
+ void PMA::write( uint16_t val , uint16_t ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:88:33: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_TX0_BSize , (uint16_t*)( ep.EP_Num * 8UL + 1UL ) );
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 2 of 'void PMA::write(uint16_t, uint16_t)'
+ void PMA::write( uint16_t val , uint16_t ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:89:33: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_Ptr   , (uint16_t*)( ep.EP_Num * 8UL + 2UL ) );
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 2 of 'void PMA::write(uint16_t, uint16_t)'
+ void PMA::write( uint16_t val , uint16_t ptr )
+      ^~~
+../Drivers/DP_Src/DP_USB.cpp:90:33: error: invalid conversion from 'uint16_t* {aka short unsigned int*}' to 'uint16_t {aka short unsigned int}' [-fpermissive]
+  this->write( ep.EP_RX0_BSize , (uint16_t*)( ep.EP_Num * 8UL + 3UL ) );
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/DP_Src/DP_USB.cpp:40:6: note:   initializing argument 2 of 'void PMA::write(uint16_t, uint16_t)'
+ void PMA::write( uint16_t val , uint16_t ptr )
+      ^~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:31:29 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4604	     16	   1632	   6252	   186c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+19:40:01 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+In file included from ../Drivers/DP_Src/DP_USB.cpp:9:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:144:41: error: expected ';' at end of member declaration
+  inline uint16_t read_b(  uint16_t  ptr )
+                                         ^
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:93:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_TX0_Ptr   , ( ep.EP_Num * 8UL) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:94:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_TX0_BSize , ( ep.EP_Num * 8UL + 1UL ) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:95:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_RX0_Ptr   , ( ep.EP_Num * 8UL + 2UL ) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:96:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_RX0_BSize , ( ep.EP_Num * 8UL + 3UL ) );
+        ^~~~~
+        write_hw
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:40:14 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t PMA::PMA_allocate(EP_Config_S&)':
+../Drivers/DP_Src/DP_USB.cpp:93:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_TX0_Ptr   , ( ep.EP_Num * 8UL) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:94:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_TX0_BSize , ( ep.EP_Num * 8UL + 1UL ) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:95:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_RX0_Ptr   , ( ep.EP_Num * 8UL + 2UL ) );
+        ^~~~~
+        write_hw
+../Drivers/DP_Src/DP_USB.cpp:96:8: error: 'class PMA' has no member named 'write'; did you mean 'write_hw'?
+  this->write( ep.EP_RX0_BSize , ( ep.EP_Num * 8UL + 3UL ) );
+        ^~~~~
+        write_hw
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:40:37 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'PMA::PMA()':
+../Drivers/DP_Src/DP_USB.cpp:22:28: warning: list-initializer for non-class type must not be parenthesized
+ EPs_alloc({0,0,0,0,0,0,0,0})
+                            ^
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4604	     16	   1632	   6252	   186c	DigiProbe.elf
+Finished building: default.size.stdout
+Finished building: DigiProbe.bin
+ 
+ 
+Finished building: DigiProbe.list
+ 
+19:41:29 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4604	     16	   1632	   6252	   186c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+19:43:51 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4604	     16	   1632	   6252	   186c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+14:59:16 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:22:11: warning: variable 'my_val' set but not used [-Wunused-but-set-variable]
+  uint16_t my_val ;
+           ^~~~~~
+In file included from ../Core/Src/main.cpp:4:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h: At global scope:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:142:14: warning: inline function 'void PMA::write_hw(uint16_t, uint16_t)' used but never defined
+  inline void write_hw( uint16_t val , uint16_t ptr );
+              ^~~~~~~~
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:143:18: warning: inline function 'uint16_t PMA::read_hw(uint16_t)' used but never defined
+  inline uint16_t read_hw( uint16_t ptr );
+                  ^~~~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Core/Src/main.o: In function `main':
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Debug/../Core/Src/main.cpp:23: undefined reference to `PMA::read_hw(unsigned short)'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:59: DigiProbe.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:02:33 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Core/Src/main.o: In function `main':
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Debug/../Core/Src/main.cpp:23: undefined reference to `PMA::read_hw(unsigned short)'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:59: DigiProbe.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:05:48 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:22:11: warning: variable 'my_val' set but not used [-Wunused-but-set-variable]
+  uint16_t my_val ;
+           ^~~~~~
+In file included from ../Core/Src/main.cpp:4:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h: At global scope:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:142:14: warning: inline function 'void PMA::write_hw(uint16_t, uint16_t)' used but never defined
+  inline void write_hw( uint16_t val , uint16_t ptr );
+              ^~~~~~~~
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:143:18: warning: inline function 'uint16_t PMA::read_hw(uint16_t)' used but never defined
+  inline uint16_t read_hw( uint16_t ptr );
+                  ^~~~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Core/Src/main.o: In function `main':
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Debug/../Core/Src/main.cpp:23: undefined reference to `PMA::read_hw(unsigned short)'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:59: DigiProbe.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:06:28 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Core/Src/main.o: In function `main':
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Debug/../Core/Src/main.cpp:23: undefined reference to `PMA::read_hw(unsigned short)'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:59: DigiProbe.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:08:51 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:22:11: warning: variable 'my_val' set but not used [-Wunused-but-set-variable]
+  uint16_t my_val ;
+           ^~~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4760	     16	   1632	   6408	   1908	DigiProbe.elf
+Finished building: default.size.stdout
+Finished building: DigiProbe.bin
+ 
+ 
+Finished building: DigiProbe.list
+ 
+15:10:24 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4760	     16	   1632	   6408	   1908	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+15:13:37 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4776	     16	   1632	   6424	   1918	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+15:15:12 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4776	     16	   1632	   6424	   1918	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+15:15:38 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4788	     16	   1632	   6436	   1924	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.list
+ 
+Finished building: DigiProbe.bin
+ 
+15:18:44 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:22:11: warning: variable 'my_val' set but not used [-Wunused-but-set-variable]
+  uint16_t my_val ;
+           ^~~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4800	     16	   1632	   6448	   1930	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+17:15:13 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:340:8: error: 'struct EP_Config_S' has no member named 'EP_RBT'; did you mean 'EP_BT'?
+  this->EP_RBT = EP_bufftype_E::EP_SINGLE_BUFF ;
+        ^~~~~~
+        EP_BT
+../Drivers/DP_Src/DP_USB.cpp:341:8: error: 'struct EP_Config_S' has no member named 'EP_TBT'; did you mean 'EP_BT'?
+  this->EP_TBT = EP_bufftype_E::EP_SINGLE_BUFF ;
+        ^~~~~~
+        EP_BT
+../Drivers/DP_Src/DP_USB.cpp: In member function 'int32_t EP_Config_S::readRXBuff(uint8_t*)':
+../Drivers/DP_Src/DP_USB.cpp:476:21: error: 'class PMA' has no member named 'read'; did you mean 'read_b'?
+  uint16_t len = pma.read( this->EP_Num * 8UL + 6UL );
+                     ^~~~
+                     read_b
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:22:11: warning: variable 'my_val' set but not used [-Wunused-but-set-variable]
+  uint16_t my_val ;
+           ^~~~~~
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:15:30 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+../Drivers/DP_Src/DP_USB.cpp: In constructor 'EP_Config_S::EP_Config_S()':
+../Drivers/DP_Src/DP_USB.cpp:340:8: error: 'struct EP_Config_S' has no member named 'EP_RBT'; did you mean 'EP_BT'?
+  this->EP_RBT = EP_bufftype_E::EP_SINGLE_BUFF ;
+        ^~~~~~
+        EP_BT
+../Drivers/DP_Src/DP_USB.cpp:341:8: error: 'struct EP_Config_S' has no member named 'EP_TBT'; did you mean 'EP_BT'?
+  this->EP_TBT = EP_bufftype_E::EP_SINGLE_BUFF ;
+        ^~~~~~
+        EP_BT
+make: *** [Drivers/DP_Src/subdir.mk:33: Drivers/DP_Src/DP_USB.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:15:53 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4800	     16	   1632	   6448	   1930	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+17:26:29 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:29:8: error: 'int32_t EP_Config_S::alloc' is private within this context
+  my_ep.alloc  = EP_UNALLOC ;
+        ^~~~~
+In file included from ../Core/Src/main.cpp:4:0:
+C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc/DP_USB.h:103:10: note: declared private here
+  int32_t alloc ;
+          ^~~~~
+make: *** [Core/Src/subdir.mk:36: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:26:48 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:39:10: warning: variable 'value' set but not used [-Wunused-but-set-variable]
+  uint8_t value ;
+          ^~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6568	     16	   1632	   8216	   2018	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+17:26:53 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6568	     16	   1632	   8216	   2018	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+17:34:23 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6568	     16	   1632	   8216	   2018	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+17:43:39 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Drivers/DP_Src/DP_USB.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Drivers/DP_Src/DP_USB.d" -MT"Drivers/DP_Src/DP_USB.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/DP_Src/DP_USB.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:39:10: warning: variable 'value' set but not used [-Wunused-but-set-variable]
+  uint8_t value ;
+          ^~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6568	     16	   1632	   8216	   2018	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.bin
+ 
+Finished building: DigiProbe.list
+ 
+17:45:01 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:35:75: error: too many initializers for 'uint8_t [12] {aka unsigned char [12]}'
+  uint8_t tx_array[12] = { 1 , 2, 3 , 4, 5 , 6 ,7 ,8 ,9 ,10 , 11 , 12 , 13 };
+                                                                           ^
+make: *** [Core/Src/subdir.mk:36: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+17:45:18 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m3 -std=gnu++14 -g3 -DSTM32F103xB -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I"C:/Users/Garmoosh/STM32CubeIDE/workspace_1.3.0/DigiProbe/Drivers/DP_Inc" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-threadsafe-statics -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:39:10: warning: variable 'value' set but not used [-Wunused-but-set-variable]
+  uint8_t value ;
+          ^~~~~
+arm-none-eabi-g++ -o "DigiProbe.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Garmoosh\STM32CubeIDE\workspace_1.3.0\DigiProbe\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DigiProbe.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: DigiProbe.elf
+ 
+arm-none-eabi-objdump -h -S  DigiProbe.elf  > "DigiProbe.list"
+arm-none-eabi-objcopy  -O binary  DigiProbe.elf  "DigiProbe.bin"
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6572	     16	   1632	   8220	   201c	DigiProbe.elf
+Finished building: default.size.stdout
+ 
+Finished building: DigiProbe.list
+ 
+Finished building: DigiProbe.bin
+ 
+17:46:22 **** Incremental Build of configuration Debug for project DigiProbe ****
+make -j4 all 
+arm-none-eabi-size   DigiProbe.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6572	     16	   1632	   8220	   201c	DigiProbe.elf
+Finished building: default.size.stdout
+ 

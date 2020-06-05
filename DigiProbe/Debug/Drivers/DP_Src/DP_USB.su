@@ -1,0 +1,18 @@
+DP_USB.cpp:22:1:PMA::PMA()	16	static
+DP_USB.cpp:33:10:uint16_t PMA::read_hw(uint16_t)	16	static
+DP_USB.cpp:39:10:uint16_t PMA::read_b(uint16_t)	16	static
+DP_USB.cpp:52:6:void PMA::write_hw(uint16_t, uint16_t)	16	static
+DP_USB.cpp:64:9:int32_t PMA::PMA_allocate(EP_Config_S&)	48	static
+DP_USB.cpp:128:6:bool PMA::is_alloc(int32_t)	24	static
+DP_USB.cpp:197:9:int32_t USB_Init(uint8_t)	24	static
+DP_USB.cpp:237:6:void EP_Config_S::setTXStat(volatile uint16_t*, EP_stat_E)	32	static
+DP_USB.cpp:254:6:void EP_Config_S::setRXStat(volatile uint16_t*, EP_stat_E)	32	static
+DP_USB.cpp:274:6:void EP_Config_S::setRXDTOG(volatile uint16_t*, bool)	32	static
+DP_USB.cpp:288:6:void EP_Config_S::setTXDTOG(volatile uint16_t*, bool)	32	static
+DP_USB.cpp:331:1:EP_Config_S::EP_Config_S()	16	static
+DP_USB.cpp:350:9:int32_t EP_Config_S::allocate()	24	static
+DP_USB.cpp:439:9:int32_t EP_Config_S::writeTXBuff(uint8_t*, uint16_t)	40	static
+DP_USB.cpp:467:9:int32_t EP_Config_S::readRXBuff(uint8_t*)	24	static
+DP_USB.cpp:489:20:volatile uint16_t* EP_Config_S::getEPReg()	16	static
+DP_USB.cpp:493:1:void __static_initialization_and_destruction_0(int, int)	16	static
+DP_USB.cpp:493:1:cpp)	8	static
